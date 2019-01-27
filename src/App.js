@@ -23,7 +23,7 @@ class App extends Component {
     this.onKeyUpHandler = this.onKeyUpHandler.bind(this);
   }
 
-  onKeyUpHandler(evt, key){
+  onKeyUpHandler(evt, key) {
     console.log(evt, key);
   }
 
@@ -52,19 +52,19 @@ class App extends Component {
       if (win) {
         this.setState({
           positions: _.shuffle(_.range(0, 16))
-        },()=>{
+        }, () => {
           window.clearInterval(this.state.timer);
         })
-        window.alert('U Win!!!');
+        window.alert(`U Win!!! - Time Taken :${this.state.time} - Total Moves: ${this.state.moves}`);
       }
     }
   }
   reset() {
     this.setState({
-      time:null,
-      moves:null,
+      time: null,
+      moves: null,
       positions: _.shuffle(_.range(0, 16))
-    },()=>{
+    }, () => {
       window.clearInterval(this.state.timer);
     })
   }
@@ -78,11 +78,11 @@ class App extends Component {
           <div className='metrics'>
             <div className='text-right'>
               <div className='upper-action-div-info'>Time</div>
-              <div className='upper-action-div-info'>{this.state.time}s</div>
+              <div className='upper-action-div-info xxl'>{this.state.time}<span style={{fontSize: 'large'}}>s</span></div>
             </div>
             <div className='text-right'>
               <div className='upper-action-div-info'>Moves</div>
-              <div className='upper-action-div-info'>{this.state.moves}</div>
+              <div className='upper-action-div-info xxl'>{this.state.moves}</div>
             </div>
           </div>
 
@@ -95,10 +95,11 @@ class App extends Component {
             let [x, y] = layout[this.state.positions.indexOf(key)];
             return <div key={key}
               className={cellClass}
-              onClick={()=>this.updatePosition(key)}
+              onClick={() => this.updatePosition(key)}
               style={{ transform: `translate3d(${x}px,${y}px,0) scale(1.1)` }}>{key}</div>
           })}
         </div>
+          <p style={{fontWeight:'bold'}}>Tap on tile to move tiles in grid to order them from <span style={{ color: 'white' }}>1 to 15.</span></p>
       </div>
     )
   }
