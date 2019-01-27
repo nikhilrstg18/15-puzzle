@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  font-family: Helvetica, sans-serif;
+}
+
+html, body, .container {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+}
+
+.container .game {
+  margin: auto auto;
+  text-align: center;
+  line-height: 4.375rem;
+  width: 20.375rem;
+  height: 20.375rem;
+  background: lightgray;
+  padding: .5rem;
+  border-radius: .25rem;
+}
+
+.container .game .cell {
+  width: 4.375rem;
+  height: 4.375rem;
+  margin-right: 7px;
+  border-radius: 4px;
+  margin-bottom: 7px;
+  background: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0;
+  color: #333;
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  position: absolute;
+}
+
+.container .game .cell:hover {
+  background: #ffc107;
+  color: #fafafa;
+}
+
+.container .empty {
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.puzzle {
+  font-family: 'Great Vibes', cursive;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 4.375rem;
+}
+
+.new-game-btn {
+  height: 2.5rem;
+  padding: 0 .5rem;
+  border-radius: .5rem;
+  margin: auto .5rem;
+  background-color: #fafafa;
+  font-size: 1rem;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0;
+  cursor: pointer;  
+  transition: all 0.3s ease-in;
+}
+
+.new-game-btn:hover {
+  background: #ffc107;
+  color: #fafafa;
+}
+
+.upper-action-div {
+  display: flex;
+  background: lightgray;
+  margin: .5rem 0;
+  border-radius: 0.25rem;
+}
+
+.metrics{
+  display: flex;
+  background: #fafafa;
+  border-radius: .25rem;
+  margin: .25rem;
+}
+.text-right {
+  text-align: right;
+}
+
+.upper-action-div-info {
+  margin: auto 0.5rem;
+  height: 3rem;
+  width: 3rem;
+}
+.heading-title{
+  font-family: "Great Vibes", cursive;
+  font-size: 3rem;
+  font-style: italic;
+}
+
+/* 
+font-family: 'Great Vibes', cursive; */
