@@ -24,5 +24,6 @@
   ],
   "devDependencies": {
     "lodash": "^4.17.11"
-  }
+  },
+  "homepage":"https://nikhilrstg18.github.io/15-puzzle/"
 }
