@@ -6,32 +6,28 @@
 body {
   margin: 0;
   padding: 0;
-  background: -webkit-linear-gradient(to bottom, #c9dbe9 , #fafafa,#c9dbe9 );
-  background: linear-gradient(to bottom, #c9dbe9 , #fafafa,#c9dbe9 );
-  background: -moz-linear-gradient(to bottom, #c9dbe9 , #fafafa,#c9dbe9 );
+  background: -webkit-linear-gradient(to bottom, #c9dbe9, #fafafa, #c9dbe9);
+  background: linear-gradient(to bottom, #c9dbe9, #fafafa, #c9dbe9);
+  background: -moz-linear-gradient(to bottom, #c9dbe9, #fafafa, #c9dbe9);
   font-family: Helvetica, sans-serif;
 }
 
-html, body, .container {
+html, body, {
   height: 100%;
 }
 
-.container {
-  display: flex;
-}
-
-.container .game {
+.game {
   margin: auto auto;
   text-align: center;
   line-height: 4.375rem;
   width: 20.375rem;
   height: 20.375rem;
-  background:#c9dbe9;
+  background: #c9dbe9;
   padding: .5rem;
   border-radius: .25rem;
 }
 
-.container .game .cell {
+.game .cell {
   width: 4.375rem;
   height: 4.375rem;
   margin-right: 7px;
@@ -48,12 +44,12 @@ html, body, .container {
   position: absolute;
 }
 
-.container .game .cell:hover {
+.game .cell:hover {
   background: #00bcd4;
   color: #fafafa;
 }
 
-.container .empty {
+.empty {
   opacity: 0;
   background: rgba(0, 0, 0, 0.2);
 }
@@ -62,7 +58,7 @@ html, body, .container {
   font-family: 'Great Vibes', cursive;
   margin: 0 auto;
   text-align: center;
-  line-height: 4.375rem;
+  line-height: 2.375rem;
 }
 
 .new-game-btn {
@@ -74,7 +70,7 @@ html, body, .container {
   font-size: 1rem;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0;
-  cursor: pointer;  
+  cursor: pointer;
   transition: all 0.3s ease-in;
 }
 
@@ -91,12 +87,13 @@ html, body, .container {
   width: 20.375rem;
 }
 
-.metrics{
+.metrics {
   display: flex;
   background: #fafafa;
   border-radius: .25rem;
   margin: .25rem;
 }
+
 .text-right {
   text-align: right;
 }
@@ -106,16 +103,45 @@ html, body, .container {
   height: 3rem;
   width: 5rem;
 }
-.xxl{
+
+.xxl {
   font-size: xx-large;
 }
-.heading-title{
+
+.heading-title {
   font-family: "Great Vibes", cursive;
   font-size: 3rem;
   font-style: italic;
-  margin: 1rem auto;
-  color:#00bcd4;
+  margin: 2rem auto;
+  color: #00bcd4;
 }
 
-/* 
-font-family: 'Great Vibes', cursive; */
+.horizon {
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset;
+  margin: .2rem;
+}
+
+.created-by {
+  line-height: 1.4rem;
+  padding: 0;
+  font-size: .9rem;
+  margin: 0;
+}
+
+.instruction {
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.icon {
+  vertical-align: middle;
+  color: darkgrey;
+  font-size: 1.2rem;
+  margin: 0 .6rem;
+}
+
+.icon:hover {
+  color: lightgray;
+}
