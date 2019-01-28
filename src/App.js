@@ -60,12 +60,12 @@ class App extends Component {
     }
   }
   reset() {
+    window.clearInterval(this.state.timer);
     this.setState({
       time: null,
       moves: null,
+      timer:null,
       positions: _.shuffle(_.range(0, 16))
-    }, () => {
-      window.clearInterval(this.state.timer);
     });
   }
   render() {
