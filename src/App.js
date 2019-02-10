@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import './App.css';
+import { Button, Modal } from "react-bootstrap";
 
 const layout = _.range(0, 16).map(n => {
   const row = Math.floor(n / 4);
@@ -16,12 +17,30 @@ class App extends Component {
       moves: null,
       time: null,
       timer: null,
+      show: false,
     }
 
     this.reset = this.reset.bind(this);
     this.updatePosition = this.updatePosition.bind(this);
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
 
   }
+
+  handleClose() {
+    this.setState({ 
+      show: false
+    },()=>{
+      this.reset();
+    });
+  }
+
+  handleShow() {
+    this.setState({ 
+      show: true
+    });
+  }
+
 
   updatePosition(index) {
 
@@ -49,13 +68,9 @@ class App extends Component {
         value = value || 16;
         return index === 0 || parseInt(array[index - 1]) <= parseInt(value)
       });
-      if (win) {
-        this.setState({
-          positions: _.shuffle(_.range(0, 16))
-        }, () => {
-          window.clearInterval(this.state.timer);
-        })
-        window.alert(`U Win!!! - Time Taken :${this.state.time} - Total Moves: ${this.state.moves}`);
+      if (win) {        
+        window.clearInterval(this.state.timer);
+        this.handleShow();
       }
     }
   }
@@ -102,12 +117,12 @@ class App extends Component {
                   style={{ transform: `translate3d(${x}px,${y}px,0) scale(1.1)` }}>{key}</div>
               })}
             </div>
-            <p className='instruction'>Tap on tile to move tiles in grid to order them from <span style={{ color: 'white' }}>1 to 15.</span></p>
+            <p className='instruction'>Tap on tile to move tiles in grid to order them from 1 to 15.</p>
             <div className='footer'>
               <hr className='horizon'></hr>
-              <p className='created-by'>Crafted over sleepless weekends by Nikhil Rustagi</p>
-              <p className='created-by'>
-                <i className='fas fa-feather icon'></i>
+              <p className='created-by'>Crafted by Nikhil Rustagi</p>
+              <p className='created-by'>View my portfolio
+                <i className='fas fa-at icon'></i>
                 <a href='hhtps://nikhilrstg18.github.io/nikhil-rustagi/'>
                   <strong>nikhil-rustagi
                 </strong>
@@ -117,8 +132,22 @@ class App extends Component {
           </div>
         </div>
         <div className='col-lg-3 col-md-3'></div>
-
+        <Modal show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Congratulation You Won !</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div>Total time taken: {this.state.time}</div>
+            <div>Total moves: {this.state.moves}</div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="primary" onClick={this.handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
+      
 
     )
   }
