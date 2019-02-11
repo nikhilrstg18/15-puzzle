@@ -123,7 +123,7 @@ class App extends Component {
               <p className='created-by'>Crafted by Nikhil Rustagi</p>
               <p className='created-by'>View my portfolio
                 <i className='fas fa-at icon'></i>
-                <a href='hhtps://nikhilrstg18.github.io/nikhil-rustagi/'>
+                <a href='https://nikhilrstg18.github.io/nikhil-rustagi/'>
                   <strong>nikhil-rustagi
                 </strong>
                 </a>
